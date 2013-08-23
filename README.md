@@ -34,7 +34,7 @@ This project is maintained at:
 
 a) Installing giraffe-web is easy. You can install it like any other npm module
 
-`npm install - giraffe-web`
+`npm install giraffe-web`
 
 b) For your convenience we provide a `bashpack` allowing you to run it without having node installed.
 
