@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+// vim: ft=javascript
+//
+'use strict';
+
+var program = require('commander');
+var path = require('path');
+var GiraffeWeb = require('../lib/giraffe-web.js');
+
+var version = require('../lib/version');
+
+program
+.version(version)
+.option('-p, --port <port>', 'port to listen on [900]', 9000)
+.option('-c , --config-file [configFile]', 'Giraffe dashboard.js file containing the dashboards')
+.option('--graphite-url [url]', 'Graphite Host to connect to [http://localhost:2003]', 'http://localhost:8080')
+.option('--proxy-graphite', 'If enabled, this server will proxy graphite requests to the Graphite host specified [false]', false)
+.parse(process.argv);
+
+if (!program.configFile) {
+  program.help()
+} else {
+  var options = {
+    port: program.port,
+    configFile: program.configFile,
+    graphiteUrl: program.graphiteUrl,
+    proxyGraphite: program.proxyGraphite
+  };
+  console.log('Launching Giraffe Web on Port ' + options.port);
+  var g = new GiraffeWeb(options);
+  g.start();
+};

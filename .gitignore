@@ -1,0 +1,11 @@
+node_modules/*
+.DS_Store
+*.run
+!dist/*.run
+tmp/*
+.*.swp
+coverage.html
+dashboards.js
+.grunt
+bower_components/*
+!vendor/giraffe/dashboards.js

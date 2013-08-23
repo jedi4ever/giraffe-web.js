@@ -1,0 +1,12 @@
+{
+  "name": "giraffe",
+  "homepage": "https://github.com/kenhub/giraffe",
+  "_release": "59d7a1643e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "59d7a1643e1f4d984231f14ec0dc554e7b0ba8a4"
+  },
+  "_source": "git://github.com/kenhub/giraffe.git",
+  "_target": "*"
+}

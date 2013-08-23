@@ -1,0 +1,8 @@
+{
+  "name": "giraffe-bin",
+  "description": "Extensible remote-control environment for the AR Drone.",
+  "version": "0.0.1",
+  "dependencies": {
+    "giraffe": "git://github.com/kenhub/giraffe.git"
+  }
+}

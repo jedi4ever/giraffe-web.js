@@ -1,0 +1,5 @@
+test/*
+readme/*
+dist/*
+*.run
+dashboards.js
