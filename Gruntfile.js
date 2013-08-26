@@ -1,8 +1,26 @@
 module.exports = function(grunt) {
 
+
   // Project configuration.
   grunt.initConfig({
+    aws: grunt.file.readJSON('s3.json'),
     pkg: grunt.file.readJSON('package.json'),
+
+    s3: {
+      options: {
+        key: '<%= aws.key %>',
+        secret: '<%= aws.secret %>',
+        bucket: '<%= aws.bucket %>',
+        access: 'public-read',
+        region: 'eu-west-1'
+      }, dist: {
+        upload: [ {
+          src: 'dist/*',
+          dest: ''
+        }
+        ]
+      }
+    },
     bashpack: {
       startScript: 'bin/giraffe-web',
       darwin: {
@@ -197,6 +215,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-s3');
 
   grunt.registerTask('test', ['jshint','mochaTest']);
 

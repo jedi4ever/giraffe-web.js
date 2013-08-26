@@ -9,3 +9,4 @@ dashboards.js
 .grunt
 bower_components/*
 !vendor/giraffe/dashboards.js
+s3.json
